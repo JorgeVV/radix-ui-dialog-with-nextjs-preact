@@ -1,26 +1,16 @@
-import Link from 'next/link'
+import * as Dialog from "@radix-ui/react-dialog";
 
 export default function Home() {
   return (
-    <div>
-      Hello World.{' '}
-      <ul>
-        <li>
-          <Link href="/about">
-            <a>About</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/ssr">
-            <a>SSR</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/ssg">
-            <a>SSG</a>
-          </Link>
-        </li>
-      </ul>
-    </div>
-  )
+    <Dialog.Root>
+      <Dialog.Trigger>Trigger</Dialog.Trigger>
+      <Dialog.Overlay />
+      <Dialog.Content>
+        <Dialog.Title>Dialog title</Dialog.Title>
+        <Dialog.Description>Dialog description</Dialog.Description>
+        <Dialog.Close>Close Dialog</Dialog.Close>
+        <span>Content...</span>
+      </Dialog.Content>
+    </Dialog.Root>
+  );
 }
